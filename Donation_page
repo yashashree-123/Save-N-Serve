@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Donation Post | Save N Serve</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .filled-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d1b12] dark:text-white antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-solid border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-[#152a1c] px-6 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-background-dark">rebase_edit</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight">Save N Serve</h2>
+</div>
+<div class="hidden md:flex items-center gap-1 bg-[#e7f3eb] dark:bg-white/5 rounded-lg px-3 py-1.5">
+<span class="material-symbols-outlined text-[#4c9a66] text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm placeholder:text-[#4c9a66] w-64" placeholder="Search community posts..."/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-3 py-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-white/10 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-px bg-gray-200 dark:bg-white/10"></div>
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 border-2 border-primary" data-alt="User profile avatar of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAfO9wmmb9EXOE80k_tpnTp8uaW3VE5NvY2qSh6Kp49pw7oKhp9OhUtlOJXxXl-aqbqyx44WnsMb-_2UACIK1jhrZwrd09Gjia3jXpM6sVZHTSHOc64aX8mXy3vXy5aaKtZriHzw_NRQAXtOVWSqltBjrgPCl2CSmgw4dn3u_vE2QGhSrnZ8g1xJ2Kn-NymbAvgs7XGXsm82aoCZxZ3inBwTplTNcMYWz_WtAdN-9slXRCXCCA8jrSROBOlQXYwegg2taxcvYVrZwz");'></div>
+<span class="hidden sm:block text-sm font-bold">Alex Chen</span>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex w-64 flex-col border-r border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-[#152a1c] p-4 gap-2">
+<p class="px-3 text-xs font-bold text-[#4c9a66] uppercase tracking-wider mb-2">Main Menu</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#e7f3eb] dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[#4c9a66] group-hover:text-primary">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#e7f3eb] dark:bg-primary/20 text-[#0d1b12] dark:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined filled-icon">add_box</span>
+<span class="text-sm font-bold">New Donation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#e7f3eb] dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[#4c9a66] group-hover:text-primary">inventory_2</span>
+<span class="text-sm font-medium">My Posts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#e7f3eb] dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[#4c9a66] group-hover:text-primary">forum</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<div class="mt-auto flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#e7f3eb] dark:hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[#4c9a66]">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark">
+<div class="max-w-[1100px] mx-auto p-6 md:p-8">
+<!-- Title Bar -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h1 class="text-3xl font-black tracking-tight mb-1">Create Donation Post</h1>
+<p class="text-[#4c9a66] font-medium">Help reduce waste by sharing your surplus food.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 md:flex-none px-5 py-2.5 border border-[#cfe7d7] dark:border-white/20 rounded-lg text-sm font-bold hover:bg-white dark:hover:bg-white/10 transition-all">
+                                Save as Draft
+                            </button>
+<button class="flex-1 md:flex-none px-6 py-2.5 bg-primary text-background-dark rounded-lg text-sm font-black hover:opacity-90 transition-all shadow-lg shadow-primary/20">
+                                Post Donation
+                            </button>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Left Column: Composition -->
+<div class="xl:col-span-2 space-y-6">
+<!-- Image Upload Section -->
+<section class="bg-white dark:bg-[#152a1c] p-6 rounded-xl border border-[#cfe7d7] dark:border-white/10 shadow-sm">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">add_a_photo</span>
+                                    Visuals
+                                </h3>
+<div class="relative flex flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-[#cfe7d7] dark:border-white/20 bg-[#f8fcf9] dark:bg-white/5 py-12 px-6 transition-all hover:border-primary/50 group cursor-pointer">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">upload_file</span>
+</div>
+<div class="text-center">
+<p class="text-base font-bold">Add Photos of Food</p>
+<p class="text-sm text-[#4c9a66] max-w-[320px] mt-1">Drag and drop or click to browse. High-quality photos get rescued 3x faster.</p>
+</div>
+<button class="mt-2 px-6 py-2 bg-white dark:bg-[#152a1c] border border-[#cfe7d7] dark:border-white/20 rounded-lg text-xs font-bold shadow-sm">
+                                        Upload Images
+                                    </button>
+</div>
+</section>
+<!-- Basic Info -->
+<section class="bg-white dark:bg-[#152a1c] p-6 rounded-xl border border-[#cfe7d7] dark:border-white/10 shadow-sm space-y-4">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                                    Donation Details
+                                </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="md:col-span-2">
+<label class="block text-sm font-bold mb-1.5 ml-1">Item Name</label>
+<input class="w-full bg-[#f8fcf9] dark:bg-white/5 border border-[#cfe7d7] dark:border-white/10 rounded-lg px-4 py-3 focus:border-primary focus:ring-0 transition-colors" placeholder="e.g. 10 Freshly Baked Sourdough Loaves" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="block text-sm font-bold mb-1.5 ml-1">Description</label>
+<div class="border border-[#cfe7d7] dark:border-white/10 rounded-lg overflow-hidden bg-[#f8fcf9] dark:bg-white/5">
+<div class="flex items-center gap-1 p-2 border-b border-[#cfe7d7] dark:border-white/10 bg-white/50 dark:bg-white/5">
+<button class="p-1 hover:bg-gray-200 dark:hover:bg-white/10 rounded"><span class="material-symbols-outlined text-sm">format_bold</span></button>
+<button class="p-1 hover:bg-gray-200 dark:hover:bg-white/10 rounded"><span class="material-symbols-outlined text-sm">format_italic</span></button>
+<button class="p-1 hover:bg-gray-200 dark:hover:bg-white/10 rounded"><span class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
+<div class="w-px h-4 bg-gray-300 dark:bg-white/20 mx-1"></div>
+<button class="p-1 hover:bg-gray-200 dark:hover:bg-white/10 rounded"><span class="material-symbols-outlined text-sm">link</span></button>
+</div>
+<textarea class="w-full bg-transparent border-none focus:ring-0 p-4 min-h-[120px]" placeholder="Tell rescuers about the ingredients, dietary info, or packaging..."></textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- Logistics & Expiry -->
+<section class="bg-white dark:bg-[#152a1c] p-6 rounded-xl border border-[#cfe7d7] dark:border-white/10 shadow-sm">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">schedule</span>
+                                    Logistics
+                                </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-3 p-4 rounded-lg bg-[#f8fcf9] dark:bg-white/5 border border-[#cfe7d7] dark:border-white/10">
+<div class="flex items-center justify-between">
+<span class="text-sm font-bold">Quantity</span>
+<span class="text-xs text-[#4c9a66]">Packs / Units</span>
+</div>
+<div class="flex items-center justify-between bg-white dark:bg-background-dark rounded-lg p-2 border border-[#cfe7d7] dark:border-white/10">
+<button class="size-8 flex items-center justify-center rounded bg-primary/10 hover:bg-primary/20 text-primary"><span class="material-symbols-outlined">remove</span></button>
+<span class="text-lg font-black">1</span>
+<button class="size-8 flex items-center justify-center rounded bg-primary/10 hover:bg-primary/20 text-primary"><span class="material-symbols-outlined">add</span></button>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 rounded-lg bg-[#f8fcf9] dark:bg-white/5 border border-[#cfe7d7] dark:border-white/10">
+<div class="flex items-center justify-between">
+<span class="text-sm font-bold">Expires in</span>
+<span class="text-xs text-red-500 font-bold flex items-center gap-1"><span class="material-symbols-outlined text-xs">timer</span> Urgent</span>
+</div>
+<select class="w-full bg-white dark:bg-background-dark border border-[#cfe7d7] dark:border-white/10 rounded-lg p-2.5 text-sm focus:ring-primary focus:border-primary">
+<option>2 Hours</option>
+<option>4 Hours</option>
+<option selected="">Tomorrow Morning</option>
+<option>2 Days</option>
+</select>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sidebar Actions & Map -->
+<div class="flex flex-col gap-6">
+<!-- Map Picker -->
+<section class="bg-white dark:bg-[#152a1c] p-5 rounded-xl border border-[#cfe7d7] dark:border-white/10 shadow-sm">
+<h3 class="text-base font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+                                    Pickup Location
+                                </h3>
+<div class="relative w-full aspect-square rounded-lg overflow-hidden border border-[#cfe7d7] dark:border-white/10 mb-3 bg-gray-100 dark:bg-white/5">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A map showing street layouts with a green pin" data-location="San Francisco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOzAyHtWAayqDKxiKqMj88wSJXwk0tGw1uMKXgcU-ijEaCA4r0fy8brt8MSPVNCMMqAl2zJW2HfzuvwIekHBytbg6Np6UYSiViX38dRhrBz1YbrEOhfWH7xQw-zEYd6roBRa9wKR3UERKl52HKjJb3aUZoq8jsx-64DVm1T83yv7_SbzHhNJAkPhvalNWzIh3PtwmYkaRZzMWXKIg8kGVff2y3QLewlfUjZ3d0pCF1FYgORf9HFdQ5J_iWu93jVdX3M4SZfGyIusXL')"></div>
+<div class="absolute inset-0 bg-black/5 flex items-center justify-center pointer-events-none">
+<div class="size-10 bg-primary rounded-full flex items-center justify-center shadow-lg border-2 border-white animate-bounce">
+<span class="material-symbols-outlined text-background-dark font-bold">person_pin_circle</span>
+</div>
+</div>
+<button class="absolute bottom-2 right-2 size-8 bg-white dark:bg-[#152a1c] rounded-md shadow flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">my_location</span>
+</button>
+</div>
+<div class="flex gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-2 top-2.5 text-xs text-[#4c9a66]">search</span>
+<input class="w-full bg-[#f8fcf9] dark:bg-white/5 border border-[#cfe7d7] dark:border-white/10 rounded-lg pl-8 pr-3 py-2 text-xs" placeholder="Search address..." type="text" value="221B Baker Street, NW1 6XE"/>
+</div>
+</div>
+</section>
+<!-- Dietary Tags -->
+<section class="bg-white dark:bg-[#152a1c] p-5 rounded-xl border border-[#cfe7d7] dark:border-white/10 shadow-sm">
+<h3 class="text-base font-bold mb-3">Dietary Tags</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full text-xs font-bold bg-primary text-background-dark border border-primary">Vegan</button>
+<button class="px-3 py-1.5 rounded-full text-xs font-bold bg-[#f8fcf9] dark:bg-white/5 border border-[#cfe7d7] dark:border-white/10 hover:border-primary transition-colors">Gluten-Free</button>
+<button class="px-3 py-1.5 rounded-full text-xs font-bold bg-primary/20 text-[#0d1b12] dark:text-white border border-primary/30">Organic</button>
+<button class="px-3 py-1.5 rounded-full text-xs font-bold bg-[#f8fcf9] dark:bg-white/5 border border-[#cfe7d7] dark:border-white/10 hover:border-primary transition-colors">Dairy-Free</button>
+<button class="px-3 py-1.5 rounded-full text-xs font-bold bg-[#f8fcf9] dark:bg-white/5 border border-[#cfe7d7] dark:border-white/10 border-dashed"><span class="material-symbols-outlined text-xs align-middle">add</span> More</button>
+</div>
+</section>
+<!-- Preview Card -->
+<section class="bg-gradient-to-br from-primary/10 to-transparent dark:from-primary/5 p-5 rounded-xl border-2 border-primary/20 border-dashed">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-sm font-bold uppercase tracking-widest text-[#4c9a66]">Live Preview</h3>
+<span class="material-symbols-outlined text-primary">visibility</span>
+</div>
+<div class="bg-white dark:bg-[#152a1c] rounded-lg shadow-xl overflow-hidden">
+<div class="h-40 bg-gray-200 dark:bg-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-gray-400">image</span>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-sm">Delicious Item Name</h4>
+<span class="bg-primary/20 text-xs px-2 py-0.5 rounded text-primary">1 Left</span>
+</div>
+<p class="text-xs text-gray-500 line-clamp-2">The description you write will appear here for rescuers to see...</p>
+<div class="mt-4 flex items-center gap-2 pt-3 border-t dark:border-white/5">
+<div class="size-6 rounded-full bg-primary/20"></div>
+<div class="h-2 w-20 bg-gray-100 dark:bg-white/5 rounded"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

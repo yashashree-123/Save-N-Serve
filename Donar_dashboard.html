@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Donor Dashboard - Save N Serve</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#13ec5b",
+                "background-light": "#f6f8f6",
+                "background-dark": "#102216",
+              },
+              fontFamily: {
+                "display": ["Manrope", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .fill-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-background-dark">restaurant</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">Save N Serve</h2>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/20 text-primary font-semibold" href="#">
+<span class="material-symbols-outlined fill-icon">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span>My Donations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">corporate_fare</span>
+<span>NGO Partners</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Impact Stats</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<div class="mt-4 flex items-center gap-3 px-4">
+<div class="size-10 rounded-full bg-cover bg-center" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfJ5u2rdXOaNb7ECa9dONgXCn3Jr0VuXGiELgVSiBOVV0pc7Mdx-0c8NCtwbfHQkHyxQZIYHG_bxr-Qc68ZovdVgmdoiyQm9gTKU3DxdAVVD5DKCJaiiC5EwtR9UXtl5DGX9UzhsIykb2ubE0owwQGr6q-93WRxCr0V6FLrG4IxGhXIUwrUgwHesh8qC_1FYtS7x134vjTLFQArcThEnh6xpIsen22WdoUnvd8Qxge5S3bgAelvksdicgUCfVQqi0MB4xOCAy7t5Mx')"></div>
+<div class="flex flex-col">
+<span id="username" class="text-sm font-bold"></span>
+
+<span class="text-xs text-slate-500">Premium Donor</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-8 py-6 flex justify-between items-center">
+<div>
+<h1 class="text-2xl font-black text-slate-900 dark:text-white">Donor Dashboard</h1>
+<p class="text-slate-500 text-sm">Welcome back! You've helped feed 120 people this week.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined p-2 bg-white dark:bg-slate-900 rounded-full border border-slate-200 dark:border-slate-800 cursor-pointer">notifications</span>
+<span class="absolute top-0 right-0 size-3 bg-primary rounded-full border-2 border-background-light"></span>
+</div>
+<a href="Donation_page.html">
+  <button class="bg-primary text-background-dark px-6 py-2.5 rounded-lg font-bold flex items-center gap-2 hover:opacity-90 transition-opacity">
+    <span class="material-symbols-outlined">add</span>
+    New Donation
+  </button>
+</a>
+
+</div>
+</header>
+<div class="px-8 pb-12 space-y-8">
+<!-- Top Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+<div class="bg-primary/10 p-4 rounded-full text-primary">
+<span class="material-symbols-outlined text-3xl">restaurant_menu</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium">Total Meals Donated</p>
+<p class="text-2xl font-black">1,402</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+<div class="bg-primary/10 p-4 rounded-full text-primary">
+<span class="material-symbols-outlined text-3xl">favorite</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium">Impact Score</p>
+<p class="text-2xl font-black">94.8</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+<div class="bg-primary/10 p-4 rounded-full text-primary">
+<span class="material-symbols-outlined text-3xl">local_shipping</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium">Active Pickups</p>
+<p class="text-2xl font-black">3</p>
+</div>
+</div>
+</div>
+<!-- Main Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Donation Form -->
+<div class="lg:col-span-7 space-y-8">
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">list_alt</span>
+                                    Donate Food
+                                </h3>
+</div>
+<form class="p-6 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Food Name</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary" placeholder="e.g. Fresh Vegetable Pasta" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Quantity (Servings)</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary" placeholder="10" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Cooked Time</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary" type="datetime-local"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Expiry Time</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary" type="datetime-local"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400">location_on</span>
+<input class="w-full pl-10 rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary" placeholder="Enter pickup address" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Food Image</label>
+<div class="border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl p-8 text-center hover:border-primary transition-colors cursor-pointer bg-slate-50 dark:bg-slate-800/50">
+<span class="material-symbols-outlined text-4xl text-slate-400 mb-2">add_a_photo</span>
+<p class="text-sm text-slate-500">Drag and drop or click to upload photo</p>
+</div>
+</div>
+<button class="w-full bg-primary text-background-dark font-black py-4 rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.01] active:scale-[0.99] transition-all" type="submit">
+                                    Submit Donation
+                                </button>
+</form>
+</section>
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+                                    Food Safety Status
+                                </h3>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex items-center gap-4 bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
+<div class="size-12 rounded-full border-4 border-primary flex items-center justify-center font-bold text-primary">100%</div>
+<div>
+<p class="font-bold text-sm">Temperature Control</p>
+<p class="text-xs text-slate-500">Maintained at 4°C</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
+<div class="size-12 rounded-full border-4 border-yellow-400 flex items-center justify-center font-bold text-yellow-400">75%</div>
+<div>
+<p class="font-bold text-sm">Freshness Index</p>
+<p class="text-xs text-slate-500">Expires in 12 hours</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Map & NGOs -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Map Section -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden h-[400px] flex flex-col">
+<div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-white dark:bg-slate-900">
+<h3 class="text-md font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">map</span>
+                                    Local Food Network
+                                </h3>
+<span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Real-time view</span>
+</div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 relative bg-cover bg-center" data-alt="Map showing local NGO locations" data-location="New York City" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2cEWZtZ43yYk2C39cxmIL4pfHlRofcs48d-l4lCaO2-xrbNWlipozVFQLAfhp0D7aTODwqpgkrKocqkev77BJ5K7T8iluBdpkFURB-UYSG9H5E0XGwJXyKakzL613ewqlQPHjtqILFIER4SHyGjIM12mABs2tnZHc4Zm-TS5JyNrSftRM6XZ5-AVV1F5goMsVrECjiLkhOzmRAxjM008WdKPh-0v1G1Rv8kTaWmu3EhX-jJJqVGD8JzcNpqinkueYmqemWwpGj4iF')">
+<!-- Map Marker UI Elements -->
+<div class="absolute top-1/2 left-1/3 group cursor-pointer">
+<span class="material-symbols-outlined text-primary text-4xl fill-icon drop-shadow-md">location_on</span>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-32 bg-background-dark text-white text-[10px] p-2 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity">
+                                        City Harvest (0.4 mi)
+                                    </div>
+</div>
+<div class="absolute top-1/4 right-1/4 group cursor-pointer">
+<span class="material-symbols-outlined text-blue-500 text-3xl fill-icon drop-shadow-md">person_pin_circle</span>
+</div>
+</div>
+</section>
+<!-- Nearest NGOs -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">groups</span>
+                                    Nearest NGOs
+                                </h3>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div>
+<p class="font-bold text-sm">City Food Bank</p>
+<p class="text-xs text-slate-500">0.8 miles away • Open now</p>
+</div>
+</div>
+<button class="text-xs font-bold text-primary border border-primary/30 px-3 py-1.5 rounded-lg hover:bg-primary hover:text-background-dark transition-colors">Request</button>
+</div>
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined">temple_hindu</span>
+</div>
+<div>
+<p class="font-bold text-sm">Community Kitchen</p>
+<p class="text-xs text-slate-500">1.2 miles away • Busy</p>
+</div>
+</div>
+<button class="text-xs font-bold text-primary border border-primary/30 px-3 py-1.5 rounded-lg hover:bg-primary hover:text-background-dark transition-colors">Request</button>
+</div>
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-500">
+<span class="material-symbols-outlined">church</span>
+</div>
+<div>
+<p class="font-bold text-sm">Hope Shelter</p>
+<p class="text-xs text-slate-500">2.5 miles away • Pickups available</p>
+</div>
+</div>
+<button class="text-xs font-bold text-primary border border-primary/30 px-3 py-1.5 rounded-lg hover:bg-primary hover:text-background-dark transition-colors">Request</button>
+</div>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 text-center">
+<a class="text-xs font-bold text-slate-500 hover:text-primary transition-colors uppercase tracking-wider" href="#">View all 14 partners</a>
+</div>
+</section>
+<!-- Safety Tips -->
+<section class="bg-primary/10 border border-primary/20 rounded-xl p-6">
+<h4 class="font-bold text-background-dark dark:text-primary flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined">info</span>
+                                Pro Safety Tip
+                            </h4>
+<p class="text-sm text-slate-700 dark:text-slate-300">
+                                Always label your food with the preparation date and common allergens. This helps our partners distribute food 40% faster.
+                            </p>
+</section>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+let user = JSON.parse(localStorage.getItem("user"));
+
+if(!user){
+  window.location.href = "login.html";   // protect dashboard
+}
+
+document.getElementById("username").innerText = user.name;
+</script>
+
+</body></html>
